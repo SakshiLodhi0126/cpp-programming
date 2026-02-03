@@ -10,6 +10,6 @@ int main() {
     sum = sum + digit;
     n = n / 10;
   }
-  cout << "Sum of digits is: " << sum;
+  cout << "Sum of digits is: " << abs(sum);
   return 0;
 }
