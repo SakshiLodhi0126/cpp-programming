@@ -1,6 +1,5 @@
 #include <iostream>
 using namespace std;
-
 // Function using Euclidean Algorithm
 int gcd(int a, int b) {
   while (b != 0) { // Repeat until remainder becomes 0
@@ -10,7 +9,6 @@ int gcd(int a, int b) {
   }
   return a; // a holds GCD
 }
-
 int main() {
   int a, b;
   cin >> a >> b; // Input numbers
@@ -21,7 +19,6 @@ int main() {
     a = b;
     b = t;
   }
-
   cout << a << endl; // GCD using normal approach
   cout << gcd(a, b); // Function call (now b = 0)
 
