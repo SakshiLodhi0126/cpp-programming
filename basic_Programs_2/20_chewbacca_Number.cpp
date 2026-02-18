@@ -1,32 +1,23 @@
 #include <iostream>
 using namespace std;
 int main() {
-  int n;
-  cout << "Enter a number: ";
+  long long n;
   cin >> n;
-  int original = n;
-  int inverse = 0;
-  int reverse = 0;
+  long long original = n;
+  long long inverse = 0;
+  long long place = 1;
   while (n != 0) {
     int digit = n % 10;
-    reverse = reverse * 10 + digit;
+    int newDigit;
+    if (digit == 9 && n / 10 == 0) {
+      newDigit = 9;
+    } else {
+      newDigit = min(digit, 9 - digit);
+    }
+    inverse = newDigit * place + inverse;
+    place *= 10;
     n /= 10;
   }
-  while (reverse != 0) {
-    int digit = reverse % 10;
-    if (digit < 9 - digit) {
-      inverse = inverse * 10 + digit;
-    } else if (digit == 9) {
-      inverse = inverse * 10 + 9;
-    } else {
-      inverse = inverse * 10 + 9 - digit;
-    }
-    reverse /= 10;
-  }
-  if (inverse < original) {
-    cout << inverse;
-  } else {
-    cout << original;
-  }
+  cout << inverse;
   return 0;
 }
