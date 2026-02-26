@@ -2,21 +2,21 @@
 #include <vector>
 using namespace std;
 int main() {
-  int m, n;
-  cin >> m >> n;
-  vector<vector<int>> arr(m, vector<int>(n));
-  for (int i = 0; i < m; i++) {
-    for (int j = 0; j < n; j++) {
+  int r, c;
+  cin >> r >> c;
+  vector<vector<int>> arr(r, vector<int>(c));
+  for (int i = 0; i < r; i++) {
+    for (int j = 0; j < c; j++) {
       cin >> arr[i][j];
     }
   }
-  for (int j = 0; j < n; j++) {
+  for (int j = 0; j < c; j++) {
     if (j % 2 != 0) {
-      for (int i = 0; i < m; i++) {
+      for (int i = 0; i < r; i++) {
         cout << arr[i][j] << " ";
       }
     } else {
-      for (int i = m - 1; i >= 0; i--) {
+      for (int i = r - 1; i >= 0; i--) {
         cout << arr[i][j] << " ";
       }
     }
