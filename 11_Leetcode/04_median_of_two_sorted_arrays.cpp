@@ -39,7 +39,7 @@ double findMedianSortedArrays(vector<int> &nums1, vector<int> &nums2) {
     int mid1 = s / 2;
     int mid2 = (s / 2) - 1;
     median = (double)(nums[mid1] + nums[mid2]) /
-             2; // making ek operand double varna 2 ayega instead of 2.5,
+             2; // making the operand double else 2 will come instead of 2.5,
                 // integer division and double division
   }
   return median;
