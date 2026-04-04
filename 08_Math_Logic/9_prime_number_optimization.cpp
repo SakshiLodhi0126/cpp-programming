@@ -1,15 +1,23 @@
+#include <cmath> // Required for sqrt()
 #include <iostream>
+
 using namespace std;
-int main(){
-    int n;
-    cout<<"Enter the number: ";
-    cin>>n;
-    for(int i=2; i<=n/2; i++){
-        if(n%i==0){
-            cout<<"Not Prime";
-            break;
-        }
+
+int main() {
+  int limit;
+  cout << "Enter upper limit: ";
+  cin >> limit;
+
+  for (int i = 2; i <= limit; i++) {
+    bool isPrime = true;
+    for (int j = 2; j * j <= i; j++) { // Using j*j <= i is faster than sqrt(i)
+      if (i % j == 0) {
+        isPrime = false;
+        break;
+      }
     }
-    cout<<"Prime";
-    return 0;
+    if (isPrime)
+      cout << i << " ";
+  }
+  return 0;
 }
