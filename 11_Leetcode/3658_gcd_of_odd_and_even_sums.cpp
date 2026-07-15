@@ -1,9 +1,9 @@
 #include <iostream>
 using namespace std;
-int gcdOfOddEvenSums(int n) { return n; }
-int main() {
+int main (){
   int n;
+  cout << "Enter the value of n: ";
   cin >> n;
-  cout << gcdOfOddEvenSums(n) << endl;
-  return 0;
+  //GCD of sumOdd and sumEven is always equal to n
+  cout << "The GCD of first " << n << " odd and even sums is: " << n << endl;
 }
