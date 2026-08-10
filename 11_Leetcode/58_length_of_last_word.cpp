@@ -1,35 +1,30 @@
 #include <iostream>
 #include <string>
+
 using namespace std;
 
-class Solution {
-public:
-  int lengthOfLastWord(string s) {
+int main() {
+    string s;
+
+    cout << "Enter a string: ";
+    // Use getline to read the complete line including spaces
+    getline(cin, s);
+
     int length = 0;
     int i = s.length() - 1;
 
+    // Step 1: Skip trailing spaces at the end of the string
     while (i >= 0 && s[i] == ' ') {
-      i--;
+        i--;
     }
 
+    // Step 2: Count characters until reaching a space or start of string
     while (i >= 0 && s[i] != ' ') {
-      length++;
-      i--;
+        length++;
+        i--;
     }
 
-    return length;
-  }
-};
+    cout << "Length of last word: " << length << endl;
 
-int main() {
-
-  string s;
-  cout << "Enter a sentence: ";
-  getline(cin, s);
-
-  Solution obj;
-
-  cout << "Length of last word: " << obj.lengthOfLastWord(s);
-
-  return 0;
+    return 0;
 }
